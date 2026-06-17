@@ -12,7 +12,7 @@ import random
 # --- DOSYA AYARLARI ---
 MODEL_YOLU = 'best1.pt' 
 
-# --- 🌟 TAKIM SEÇİMİ (GERÇEK DATA.YAML SIRALAMASINA GÖRE) 🌟 ---
+# ---  TAKIM SEÇİMİ (GERÇEK DATA.YAML SIRALAMASINA GÖRE)  ---
 # 0: CT-Body, 1: CT-Head, 2: Dead, 3: T-Body, 4: T-Head
 HEDEFLER = [3] # Başlangıçta T'lerin vücuduna (3) kilitlen.
 hedef_modu = "T'leri VUR (Sen CT'sin)"
@@ -45,10 +45,10 @@ model = YOLO(MODEL_YOLU)
 sct = mss()
 
 print("\n" + "="*45)
-print("🔥 YAZILIM AJANI: GERÇEK SINIFLARLA AKTİF 🔥")
+print(" YAZILIM AJANI: GERÇEK SINIFLARLA AKTİF ")
 print("="*45)
-print(f"🎯 HEDEF TAKIM: {hedef_modu} (Değiştirmek için F4)")
-print(f"🔫 SİLAH PROFIILI: {aktif_profil} (F1, F2, F3)")
+print(f" HEDEF TAKIM: {hedef_modu} (Değiştirmek için F4)")
+print(f" SİLAH PROFIILI: {aktif_profil} (F1, F2, F3)")
 print("❌ ÇIKIŞ: 'q' tuşuna basılı tut")
 print("="*45 + "\n")
 
@@ -60,7 +60,7 @@ while True:
         print("Aimbot güvenle kapatılıyor...")
         break
 
-    # 🌟 TAKIM DEĞİŞTİRME (F4) 🌟
+    #  TAKIM DEĞİŞTİRME (F4) 
     if keyboard.is_pressed('f4') and (su_an - toggle_bekleme > 0.3):
         if 3 in HEDEFLER:
             HEDEFLER = [0] # 0 = CT-Body
@@ -75,17 +75,17 @@ while True:
     if keyboard.is_pressed('f1') and aktif_profil != "TAARRUZ (F1)":
         aktif_profil = "TAARRUZ (F1)"
         ayarlar = silah_profilleri[aktif_profil]
-        print(f"🔫 Profil: {aktif_profil}")
+        print(f" Profil: {aktif_profil}")
         
     elif keyboard.is_pressed('f2') and aktif_profil != "TABANCA (F2)":
         aktif_profil = "TABANCA (F2)"
         ayarlar = silah_profilleri[aktif_profil]
-        print(f"🔫 Profil: {aktif_profil}")
+        print(f" Profil: {aktif_profil}")
         
     elif keyboard.is_pressed('f3') and aktif_profil != "SNIPER  (F3)":
         aktif_profil = "SNIPER  (F3)"
         ayarlar = silah_profilleri[aktif_profil]
-        print(f"🔫 Profil: {aktif_profil}")
+        print(f" Profil: {aktif_profil}")
 
     # --- EKRAN OKUMA VE TAHMİN ---
     ekran = np.array(sct.grab(monitor))
